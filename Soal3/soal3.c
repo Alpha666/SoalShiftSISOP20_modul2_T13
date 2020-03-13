@@ -69,7 +69,7 @@ int main(){
               /* code */
               char iniberhasil[500];
               sprintf(iniberhasil,"/home/andrew/modul2/jpg/%s",directory->d_name);
-              char *argumenlagi[] = {"mv",iniberhasil,"/home/andrew/modul2/sedaap",NULL};
+              char *argumenlagi[] = {"mv",iniberhasil,"/home/andrew/modul2/sedaap/",NULL};
               execv("/bin/mv",argumenlagi);
             }
           }
@@ -91,7 +91,7 @@ int main(){
     }
   }
   else if (pidbuatb > 0 && pidbuatc == 0){
-    char* buka_buka[] = {"unzip","-o","/home/andrew/modul2/jpg.zip",NULL};
+    char* buka_buka[] = {"unzip","-oq","/home/andrew/modul2/jpg.zip",NULL};
     execv("/usr/bin/unzip",buka_buka);
   }
   return 0;
