@@ -14,13 +14,27 @@ int main (int argc, char *argv[]){
   struct tm coba_coba = *localtime(&inivariabelwaktu);
   int detik,menit,jam;
 
+
+  int a, b, c;  
+  a = atoi(argv[3]);
+  b = atoi(argv[2]);
+  c = atoi(argv[1]);
+
   if (argc != 5) {
-    printf("Argumen anda salah !");
+    printf("Argumen anda salah !\n");
   }
+  else{
+  	if((c<0 || c>59) || (b<0 || b>59) || (a<0 || a>23)){
+  		printf("Format waktu salah\n");
+  		exit(EXIT_FAILURE);
+  	}
+
 
   int inivariabelstrcmpdetik = strcmp(argv[1],"*");
   int inivariabelstrcmpmenit = strcmp(argv[2],"*");
   int inivariabelstrcmpjam = strcmp(argv[3],"*");
+
+  
 
   pid_t pid, sid;        // Variabel untuk menyimpan PID
 
@@ -58,5 +72,6 @@ int main (int argc, char *argv[]){
       execv("/bin/bash", bashv);
     }
   }
+sleep(1);
   }
-}
+}}
